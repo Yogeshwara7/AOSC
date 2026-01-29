@@ -1,0 +1,41 @@
+{
+  "name": "Community",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Community name"
+    },
+    "short_name": {
+      "type": "string",
+      "description": "Short name/acronym"
+    },
+    "description": {
+      "type": "string",
+      "description": "Community description"
+    },
+    "logo_url": {
+      "type": "string",
+      "description": "Community logo"
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Key features/highlights"
+    }
+  },
+  "required": [
+    "name",
+    "description"
+  ]
+}

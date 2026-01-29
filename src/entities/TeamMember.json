@@ -1,0 +1,49 @@
+{
+  "name": "TeamMember",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Member's full name"
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "coordinator",
+        "community_lead",
+        "executive",
+        "member",
+        "alumni",
+        "soswc_rep"
+      ],
+      "description": "Role in the community"
+    },
+    "title": {
+      "type": "string",
+      "description": "Display title"
+    },
+    "avatar_url": {
+      "type": "string",
+      "description": "Profile picture URL"
+    },
+    "github_username": {
+      "type": "string",
+      "description": "GitHub username"
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Technical skills"
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order"
+    }
+  },
+  "required": [
+    "name",
+    "role"
+  ]
+}

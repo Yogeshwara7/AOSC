@@ -1,0 +1,80 @@
+{
+  "name": "Project",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Project name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Project description"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Project cover image URL"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "in-progress",
+        "maintained",
+        "active",
+        "completed"
+      ],
+      "description": "Project status"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "community",
+        "member"
+      ],
+      "description": "Whether it's a community or member project"
+    },
+    "tech_stack": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Technologies used"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Project tags"
+    },
+    "github_url": {
+      "type": "string",
+      "description": "GitHub repository URL"
+    },
+    "live_url": {
+      "type": "string",
+      "description": "Live project URL"
+    },
+    "contributors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "github": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Project contributors"
+    }
+  },
+  "required": [
+    "title",
+    "description"
+  ]
+}
