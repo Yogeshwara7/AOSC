@@ -22,14 +22,14 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-slate-200/50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-lg border-b border-slate-200/50 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-16">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <Link to={createPageUrl('Home')} className="flex items-center gap-3 cursor-hover">
             <motion.svg
               viewBox="0 0 40 40"
-              className="w-10 h-10"
+              className="w-8 h-8 sm:w-10 sm:h-10"
               fill="none"
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
@@ -59,7 +59,7 @@ export default function Navbar() {
                 </linearGradient>
               </defs>
             </motion.svg>
-            <span className="aosc-logo text-xl text-slate-900">
+            <span className="aosc-logo text-base sm:text-xl text-slate-900">
               AOSC
             </span>
           </Link>
@@ -70,7 +70,7 @@ export default function Navbar() {
               <Link
                 key={link.page}
                 to={createPageUrl(link.page)}
-                className={`text-sm font-medium transition-all duration-200 cursor-hover relative ${
+                className={`text-sm sm:text-base lg:text-lg font-medium transition-all duration-200 cursor-hover relative ${
                   isActive(link.page)
                     ? 'text-slate-900'
                     : 'text-slate-600 hover:text-slate-900'
@@ -91,7 +91,9 @@ export default function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden cursor-hover"
+            className="md:hidden cursor-hover p-2.5 h-11 w-11 sm:h-10 sm:w-10"
+            aria-label="Toggle menu"
+            aria-expanded={isOpen}
             onClick={() => setIsOpen(!isOpen)}
           >
             <motion.div
@@ -113,7 +115,7 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white/95 backdrop-blur-lg border-b border-slate-200 overflow-hidden"
           >
-            <div className="px-6 py-4 space-y-2">
+            <div className="px-4 sm:px-6 py-4 space-y-2">
               {navLinks.map((link, index) => (
                 <motion.div
                   key={link.page}
@@ -124,7 +126,7 @@ export default function Navbar() {
                   <Link
                     to={createPageUrl(link.page)}
                     onClick={() => setIsOpen(false)}
-                    className={`block py-3 px-4 rounded-lg text-sm font-medium transition-colors cursor-hover ${
+                    className={`block py-3 px-4 rounded-lg text-sm sm:text-base font-medium transition-colors cursor-hover ${
                       isActive(link.page)
                         ? 'bg-cyan-50 text-slate-900'
                         : 'text-slate-600 hover:bg-slate-50'

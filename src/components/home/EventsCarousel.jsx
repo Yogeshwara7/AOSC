@@ -20,7 +20,7 @@ function EventCard({ event }) {
   return (
     <motion.div
       whileHover={{ y: -5 }}
-      className="flex-shrink-0 w-80 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+      className="flex-shrink-0 w-72 sm:w-80 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
     >
       <div className="relative h-48 overflow-hidden">
         <img
@@ -62,7 +62,7 @@ export default function EventsCarousel() {
 
   return (
     <section className="py-24 bg-slate-50 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 mb-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-16 mb-12">
         {/* System Log Header */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -94,11 +94,11 @@ export default function EventsCarousel() {
       </div>
 
       {/* Scrolling Carousel */}
-      <div className="relative">
+      <div className="relative overflow-hidden">
         {isLoading ? (
-          <div className="flex gap-6 px-6 overflow-hidden">
+          <div className="flex gap-4 px-4 sm:px-6 overflow-hidden">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="flex-shrink-0 w-80">
+              <div key={i} className="flex-shrink-0 w-72 sm:w-80">
                 <Skeleton className="h-48 rounded-t-2xl" />
                 <div className="p-5 space-y-3">
                   <Skeleton className="h-4 w-24" />
@@ -111,7 +111,7 @@ export default function EventsCarousel() {
         ) : displayEvents.length > 0 ? (
           <motion.div
             ref={scrollRef}
-            className="flex gap-6 px-6"
+            className="flex gap-4 px-4 sm:px-6"
             animate={{ x: [-0, -320 * events.length] }}
             transition={{
               x: {

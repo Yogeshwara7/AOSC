@@ -20,7 +20,7 @@ const quickLinks = [
 export default function Footer() {
   return (
     <footer className="bg-slate-900 text-white">
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 py-6 sm:py-10">
         <div className="grid md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
@@ -111,7 +111,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-8 pt-4 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">
             © {new Date().getFullYear()} Alva's Open Source Community. All rights reserved.
           </p>

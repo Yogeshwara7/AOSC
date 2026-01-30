@@ -43,7 +43,7 @@ const TerminalWindow = ({ members, currentMember }) => {
   }, [member]);
 
   return (
-    <div className="bg-gray-900 rounded-lg p-6 font-mono text-sm">
+    <div className="bg-gray-900 rounded-lg p-6 font-mono text-sm sm:text-base">
       {/* Terminal Header */}
       <div className="flex items-center gap-2 mb-4 pb-3 border-b border-gray-700">
         <div className="flex gap-2">
@@ -137,7 +137,7 @@ const MemberCard = ({ member }) => {
         <div className="w-full">
           {/* Name and Status */}
           <div className="flex items-center justify-center gap-2 mb-3">
-            <h3 className="text-2xl font-bold text-gray-900">{member.name}</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900">{member.name}</h3>
             <div className={`w-3 h-3 rounded-full ${member.status === 'online' ? 'bg-green-500' :
               member.status === 'coding' ? 'bg-blue-500' :
                 'bg-yellow-500'
@@ -273,7 +273,7 @@ export default function TeamPreview() {
   }, [displayMembers.length]);
 
   return (
-    <section className="py-24 px-6 bg-slate-50">
+    <section className="py-24 px-4 sm:px-8 lg:px-16 bg-slate-50">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -293,7 +293,7 @@ export default function TeamPreview() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-bold text-slate-900"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900"
             >
               Team Browser
             </motion.h2>
@@ -301,14 +301,14 @@ export default function TeamPreview() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-slate-500 font-mono text-sm mt-2"
+              className="text-slate-500 font-mono text-sm sm:text-base mt-2"
             >
               Live GitHub data • {displayMembers.length} developers online
             </motion.div>
           </div>
 
           <Link to={createPageUrl('Team')}>
-            <Button variant="outline" className="rounded-full group cursor-hover">
+            <Button variant="outline" className="rounded-full group cursor-hover px-4 py-2 h-11">
               View Full Directory
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>

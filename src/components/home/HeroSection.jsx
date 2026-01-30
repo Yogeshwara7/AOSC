@@ -33,21 +33,21 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="min-h-screen bg-white relative overflow-hidden flex flex-col justify-between pt-16">
+    <section className="min-h-screen bg-white relative overflow-hidden flex flex-col justify-between pt-16 px-4 sm:px-8 lg:px-16">
       {/* Animated Background Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {generateParticles()}
       </div>
 
       {/* Subtle Background Elements */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-slate-900/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-cyan-400/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-96 sm:h-96 bg-slate-900/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 bg-cyan-400/10 rounded-full blur-3xl" />
 
       {/* Terminal Status Bar */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex justify-between items-center px-6 py-4 text-xs font-mono text-slate-500 relative z-10"
+        className="flex justify-between items-center px-4 sm:px-6 py-4 text-xs font-mono text-slate-500 relative z-10"
       >
         <div className="flex items-center gap-2">
           <span className="font-mono-accent">(env):</span>
@@ -62,13 +62,13 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Main Content */}
-      <div className="flex-1 flex flex-col items-center justify-center px-6 pb-8 relative z-10">
+      <div className="flex-1 flex flex-col items-center justify-center px-4 sm:px-8 lg:px-16 pb-8 relative z-10">
         {/* Location Tag */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="flex items-center gap-2 text-slate-500 font-mono-accent text-sm mb-8"
+          className="flex items-center gap-2 text-slate-500 font-mono-accent text-sm sm:text-base mb-6"
         >
           {/* <span className="text-slate-400 text-xs font-mono-accent">LOC_DATA</span> */}
           <MapPin className="w-4 h-4 text-cyan-500" />
@@ -83,7 +83,7 @@ export default function HeroSection() {
           className="relative"
         >
           <motion.h1
-            className="aosc-logo text-[80px] md:text-[180px] lg:text-[220px] leading-none text-slate-900 cursor-hover"
+            className="aosc-logo text-[48px] sm:text-[80px] md:text-[140px] lg:text-[180px] leading-none text-slate-900 cursor-hover"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -101,7 +101,7 @@ export default function HeroSection() {
           transition={{ delay: 0.6 }}
           className="relative mt-6"
         >
-          <p className="text-slate-600 font-mono text-sm md:text-base tracking-wider">
+          <p className="text-slate-600 font-mono text-sm sm:text-base lg:text-lg tracking-wider">
             COMMIT. MERGE. EVOLVE
           </p>
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-0.5 bg-cyan-400 rounded-full mt-1"></div>
@@ -112,7 +112,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="text-slate-500 text-sm mt-4 font-medium"
+          className="text-slate-500 text-sm sm:text-base lg:text-lg mt-4 font-medium"
         >
           Alva's Open Source Community
         </motion.p>

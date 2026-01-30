@@ -5,10 +5,10 @@ import CustomCursor from '@/components/shared/CustomCursor';
 
 export default function Layout({ children }) {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <CustomCursor />
       <Navbar />
-      <main className="pt-16">
+      <main className="pt-16 overflow-x-hidden">
         {children}
       </main>
       <Footer />

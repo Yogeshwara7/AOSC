@@ -101,7 +101,7 @@ export default function Events() {
   const categories = ['all', 'flagship', 'hackathon', 'workshop', 'mentoring', 'media', 'technical', 'outreach'];
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12 px-6">
+    <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -109,10 +109,10 @@ export default function Events() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Events & Highlights
           </h1>
-          <p className="text-slate-500 max-w-2xl">
+          <p className="text-slate-500 text-sm sm:text-base max-w-2xl">
             From hackathons to workshops, discover the events that bring our community together.
           </p>
         </motion.div>
@@ -130,7 +130,7 @@ export default function Events() {
               placeholder="Search events..."
               value={filters.search}
               onChange={(e) => setFilters({ ...filters, search: e.target.value })}
-              className="pl-10 font-mono text-sm bg-white border-gray-200 rounded-xl h-12"
+              className="pl-10 font-mono text-sm sm:text-base bg-white border-gray-200 rounded-xl h-12"
             />
           </div>
 
@@ -153,7 +153,7 @@ export default function Events() {
 
         {/* Events Grid */}
         {isLoading ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[...Array(6)].map((_, i) => (
               <div key={i} className="rounded-2xl overflow-hidden">
                 <Skeleton className="h-52" />
@@ -172,7 +172,7 @@ export default function Events() {
             
             {/* Regular Events */}
             {filteredEvents.length > 0 && (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
                 {filteredEvents.map((event, index) => (
                   <EventCard key={event.id} event={event} index={index} />
                 ))}

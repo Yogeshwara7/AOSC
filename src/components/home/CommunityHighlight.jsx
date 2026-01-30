@@ -4,6 +4,17 @@ import { X } from 'lucide-react';
 export default function CommunityHighlight() {
   const [selectedItem, setSelectedItem] = useState(null);
 
+  // Prevent background scroll when modal is open
+  React.useEffect(() => {
+    if (typeof document === 'undefined') return;
+    if (selectedItem) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [selectedItem]);
+
   // More authentic, casual data
   const updates = [
     {
@@ -173,7 +184,7 @@ export default function CommunityHighlight() {
       {/* Simple modal */}
       {selectedItem && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setSelectedItem(null)}>
-          <div className="bg-white rounded-lg max-w-md w-full p-6" onClick={e => e.stopPropagation()}>
+          <div className="bg-white rounded-lg max-w-md w-full p-6 max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
             <div className="flex justify-between items-start mb-4">
               <span className="text-xs bg-gray-100 px-2 py-1 rounded text-gray-600">{selectedItem.tag}</span>
               <button onClick={() => setSelectedItem(null)} className="text-gray-400 hover:text-gray-600">

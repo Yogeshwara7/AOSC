@@ -77,7 +77,7 @@ export default function Team() {
   const coreTeam = [...coordinators, ...leads, ...executives, ...soswcReps];
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12 px-6">
+    <div className="min-h-screen bg-slate-50 py-12 px-4 sm:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -114,13 +114,13 @@ export default function Team() {
             <TabsList className="mb-8 bg-white border border-slate-100 p-1 rounded-full">
               <TabsTrigger 
                 value="current" 
-                className="rounded-full px-6 data-[state=active]:bg-cyan-500 data-[state=active]:text-white"
+                className="rounded-full px-4 sm:px-6 data-[state=active]:bg-cyan-500 data-[state=active]:text-white"
               >
                 Current Team
               </TabsTrigger>
               <TabsTrigger 
                 value="alumni" 
-                className="rounded-full px-6 data-[state=active]:bg-cyan-500 data-[state=active]:text-white"
+                className="rounded-full px-4 sm:px-6 data-[state=active]:bg-cyan-500 data-[state=active]:text-white"
               >
                 Alumni
               </TabsTrigger>
