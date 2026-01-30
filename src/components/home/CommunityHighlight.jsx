@@ -8,18 +8,18 @@ export default function CommunityHighlight() {
   const updates = [
     {
       id: 1,
-      title: "SOSC Podcast is back!",
-      desc: "We're doing weekly chats about whatever's on our minds - code, careers, random tech stuff",
+      title: "Podcast",
+      desc: "We're doing monthly chats about whatever's on our minds - code, careers, random tech stuff",
       tag: "podcast",
       bgColor: "#f5f5f5",
       textColor: "#2d2d2d",
-      members: 127,
+      members: 200,
       lastActive: "2 days ago"
     },
     {
       id: 2,
       title: "WebDev Workshop",
-      desc: "Two days of building stuff from scratch. Bring your laptop and some snacks",
+      desc: "Two days of Hands-on workshop conducted for students of AIET to know the fundamentals of Web along with some small interactive session breaks",
       tag: "workshop",
       bgColor: "#f5f5f5",
       textColor: "#2d2d2d",
@@ -28,7 +28,7 @@ export default function CommunityHighlight() {
     },
     {
       id: 3,
-      title: "Hit 1k stars! 🎉",
+      title: "Hit 1k stars!",
       desc: "Our little project somehow got popular. Thanks everyone who starred it!",
       tag: "milestone",
       bgColor: "#f5f5f5",
@@ -38,14 +38,13 @@ export default function CommunityHighlight() {
     },
     {
       id: 4,
-      title: "Design meetup",
-      desc: "Figma tips, design systems, and probably arguing about fonts",
-      tag: "design",
+      title: "Guest Tech Talk",
+      desc: "Industry engineers shared insights on scalable systems and real-world development.",
+      tag: "talk",
       bgColor: "#f5f5f5",
       textColor: "#2d2d2d",
-      nextMeeting: "Friday 6pm",
-      regulars: 15
-    },
+      speakers: 3
+    },    
     {
       id: 5,
       title: "Hackathon prep",
